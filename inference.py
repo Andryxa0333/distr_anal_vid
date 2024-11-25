@@ -9,9 +9,10 @@ except Exception as e:
     raise RuntimeError(f"Error loading YOLO model: {e}")
 
 image = cv.imread("/home/andr/antonov_proj/input/maxresdefault.jpg")
+image = cv.imread("test.png")
 print(image.shape)
-image = cv.resize(image, (640,360),interpolation=cv.INTER_AREA)
-print(image.shape)
+# image = cv.resize(image, (640,360),interpolation=cv.INTER_AREA)
+# print(image.shape)
 
 results = model(image, show=True)
 
